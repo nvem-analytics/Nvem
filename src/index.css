@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Terminal Colors */
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #1a1a1a;
+
+  /* Accent Colors - Pure Monochrome */
+  --accent-primary: #ffffff;
+  --accent-secondary: #e0e0e0;
+  --accent-tertiary: #c0c0c0;
+  --accent-dim: #808080;
+  --accent-dark: #404040;
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b0b0b0;
+  --text-dim: #707070;
+
+  /* Effects - White Glow Only */
+  --glow-primary: 0 0 20px rgba(255, 255, 255, 0.6);
+  --glow-secondary: 0 0 15px rgba(255, 255, 255, 0.4);
+  --glow-strong: 0 0 30px rgba(255, 255, 255, 0.8);
+
+  /* Fonts */
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-mono);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* Selection */
+::selection {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}

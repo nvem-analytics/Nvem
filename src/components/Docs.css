@@ -1,0 +1,228 @@
+.docs {
+    padding: 6rem 2rem;
+}
+
+.docs-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.docs-tabs {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: rgba(26, 26, 26, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-secondary);
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 2px;
+}
+
+.tab:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tab.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.tab-icon {
+    font-size: 1.1rem;
+}
+
+.docs-body {
+    padding: 2rem;
+}
+
+.doc-section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.doc-title {
+    color: var(--accent-primary);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: var(--glow-primary);
+}
+
+.doc-step {
+    margin-bottom: 2.5rem;
+}
+
+.step-title {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.step-number {
+    color: var(--accent-secondary);
+    font-weight: bold;
+    text-shadow: var(--glow-secondary);
+}
+
+.code-block {
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.code-lang {
+    color: var(--accent-secondary);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.copy-btn {
+    background: transparent;
+    border: 1px solid var(--accent-primary);
+    color: var(--accent-primary);
+    padding: 0.3rem 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.code-content {
+    padding: 1.5rem;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin: 0;
+}
+
+.guide-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.guide-item {
+    padding: 1.5rem;
+    background: rgba(26, 26, 26, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.guide-item:hover {
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+}
+
+.guide-title {
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.guide-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.guide-link {
+    color: var(--accent-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.guide-link:hover {
+    color: var(--accent-primary);
+    text-shadow: var(--glow-primary);
+}
+
+.example-item {
+    margin-bottom: 2rem;
+}
+
+.example-title {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .docs {
+        padding: 4rem 1rem;
+    }
+
+    .docs-tabs {
+        flex-wrap: wrap;
+    }
+
+    .tab {
+        flex: 1;
+        min-width: 120px;
+        justify-content: center;
+    }
+
+    .docs-body {
+        padding: 1rem;
+    }
+
+    .doc-title {
+        font-size: 1.5rem;
+    }
+
+    .guide-list {
+        grid-template-columns: 1fr;
+    }
+}
