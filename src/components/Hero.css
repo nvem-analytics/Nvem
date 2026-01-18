@@ -8,6 +8,9 @@
     overflow: hidden;
     max-width: none;
     margin: 0;
+    /* Performance optimizations */
+    contain: layout style;
+    content-visibility: auto;
 }
 
 /* Animated Background Particles */
@@ -34,7 +37,7 @@
 
 @keyframes float-up {
     0% {
-        transform: translateY(100vh) scale(0);
+        transform: translate3d(0, 100vh, 0) scale(0);
         opacity: 0;
     }
 
@@ -47,7 +50,7 @@
     }
 
     100% {
-        transform: translateY(-100vh) scale(1);
+        transform: translate3d(0, -100vh, 0) scale(1);
         opacity: 0;
     }
 }
@@ -94,15 +97,15 @@
 
     0%,
     100% {
-        transform: translate(0, 0) scale(1);
+        transform: translate3d(0, 0, 0) scale(1);
     }
 
     33% {
-        transform: translate(50px, -50px) scale(1.1);
+        transform: translate3d(50px, -50px, 0) scale(1.1);
     }
 
     66% {
-        transform: translate(-50px, 50px) scale(0.9);
+        transform: translate3d(-50px, 50px, 0) scale(0.9);
     }
 }
 
@@ -139,6 +142,10 @@
         0 0 40px rgba(255, 255, 255, 0.5),
         0 0 60px rgba(255, 255, 255, 0.3);
     animation: logo-pulse 3s ease-in-out infinite;
+    /* CLS fix: reserve space for logo */
+    min-height: 180px;
+    /* GPU acceleration */
+    transform: translateZ(0);
 }
 
 @keyframes logo-pulse {

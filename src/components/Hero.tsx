@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import './Hero.css';
 
 export default function Hero() {
@@ -32,14 +32,16 @@ export default function Hero() {
         return () => clearInterval(timer);
     }, []);
 
-    // Generate random particles - fewer on mobile
+    // Generate random particles - fewer on mobile (memoized for performance)
     const particleCount = isMobile ? 8 : 30;
-    const particles = Array.from({ length: particleCount }, (_, i) => ({
-        id: i,
-        left: Math.random() * 100,
-        animationDelay: Math.random() * 5,
-        animationDuration: 3 + Math.random() * 4
-    }));
+    const particles = useMemo(() =>
+        Array.from({ length: particleCount }, (_, i) => ({
+            id: i,
+            left: Math.random() * 100,
+            animationDelay: Math.random() * 5,
+            animationDuration: 3 + Math.random() * 4
+        }))
+        , [particleCount]);
 
     const asciiArt = `███╗   ██╗██╗   ██╗███████╗███╗   ███╗
 ████╗  ██║██║   ██║██╔════╝████╗ ████║
