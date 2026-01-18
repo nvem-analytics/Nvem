@@ -380,7 +380,7 @@
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: -7rem;
+    bottom: -7.5rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -467,7 +467,11 @@
 
 @media (max-width: 768px) {
     .hero {
-        padding: 5rem 0 1rem;
+        padding: 4rem 0 1rem;
+    }
+
+    .hero-content {
+        gap: 1.5rem;
     }
 
     /* Disable expensive animations on mobile */
@@ -477,7 +481,8 @@
 
     .ascii-art {
         font-size: 1.15rem;
-        padding: 1rem;
+        padding: 0.5rem 1rem;
+        min-height: 120px;
         /* Remove all effects on mobile for performance */
         text-shadow: none;
         animation: none;
@@ -492,6 +497,8 @@
     .hero-tagline {
         font-size: 1.2rem;
         letter-spacing: 1px;
+        min-height: 2rem;
+        margin: 0.5rem 0;
     }
 
     .stats-grid {
@@ -499,6 +506,7 @@
         gap: 0.75rem;
         max-width: 100%;
         padding: 0 1rem;
+        margin: 1rem 0;
     }
 
     .stat-card {
@@ -540,7 +548,8 @@
         flex-direction: column;
         width: 100%;
         max-width: 300px;
-        gap: 1rem;
+        gap: 0.75rem;
+        margin-top: 0.5rem;
     }
 
     .hero-button {
@@ -583,9 +592,19 @@
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 3.5rem 0 1rem;
+    }
+
+    .hero-content {
+        gap: 1.2rem;
+    }
+
     .ascii-art {
         font-size: 0.85rem;
-        text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        text-shadow: none;
+        padding: 0.5rem;
+        min-height: 100px;
     }
 
     .hero-tagline {
@@ -596,6 +615,7 @@
     .stats-grid {
         gap: 0.6rem;
         padding: 0 0.75rem;
+        margin: 0.75rem 0;
     }
 
     .stat-card {
