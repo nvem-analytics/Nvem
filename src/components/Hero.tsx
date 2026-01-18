@@ -3,7 +3,20 @@ import './Hero.css';
 
 export default function Hero() {
     const [typedText, setTypedText] = useState('');
+    const [isMobile, setIsMobile] = useState(false);
     const fullText = 'AI-Powered Blockchain Intelligence';
+
+    useEffect(() => {
+        // Detect mobile device
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         let index = 0;
@@ -19,8 +32,9 @@ export default function Hero() {
         return () => clearInterval(timer);
     }, []);
 
-    // Generate random particles
-    const particles = Array.from({ length: 30 }, (_, i) => ({
+    // Generate random particles - fewer on mobile
+    const particleCount = isMobile ? 8 : 30;
+    const particles = Array.from({ length: particleCount }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
         animationDelay: Math.random() * 5,

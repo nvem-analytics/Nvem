@@ -29,6 +29,7 @@
     border-radius: 50%;
     animation: float-up linear infinite;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    will-change: transform, opacity;
 }
 
 @keyframes float-up {
@@ -59,6 +60,7 @@
     opacity: 0.4;
     animation: float 20s ease-in-out infinite;
     pointer-events: none;
+    will-change: transform;
 }
 
 .orb-1 {
@@ -241,6 +243,7 @@
 .stat-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
     padding: 2rem 1.5rem;
@@ -460,9 +463,23 @@
         padding: 5rem 0 1rem;
     }
 
+    /* Disable expensive animations on mobile */
+    .particle {
+        box-shadow: none;
+    }
+
     .ascii-art {
         font-size: 1.15rem;
         padding: 1rem;
+        /* Remove all effects on mobile for performance */
+        text-shadow: none;
+        animation: none;
+        transform: none;
+    }
+
+    .logo-glow {
+        display: none;
+        /* Disable glow effect on mobile */
     }
 
     .hero-tagline {
@@ -480,12 +497,30 @@
     .stat-card {
         padding: 1.3rem 0.8rem;
         border-radius: 12px;
+        /* Disable expensive backdrop-filter on mobile */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        background: rgba(255, 255, 255, 0.08);
+        transition: none;
+    }
+
+    /* Disable hover effects on mobile */
+    .stat-card:hover {
+        transform: none;
+        border-color: rgba(255, 255, 255, 0.1);
+        background: rgba(255, 255, 255, 0.08);
+        box-shadow: none;
+    }
+
+    .stat-card::before {
+        display: none;
     }
 
     .stat-value {
         font-size: 1.3rem !important;
         margin-bottom: 0.35rem;
         font-weight: 600;
+        text-shadow: none;
     }
 
     .stat-label {
@@ -508,29 +543,42 @@
         font-size: 0.8rem;
     }
 
+    /* Simplify button animations on mobile */
+    .hero-button::before {
+        display: none;
+    }
+
+    .hero-button:hover {
+        transform: none;
+        box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Reduce orb size and blur on mobile */
     .gradient-orb {
-        filter: blur(60px);
+        filter: blur(40px);
+        opacity: 0.25;
     }
 
     .orb-1 {
-        width: 300px;
-        height: 300px;
-    }
-
-    .orb-2 {
         width: 250px;
         height: 250px;
     }
 
-    .orb-3 {
+    .orb-2 {
         width: 200px;
         height: 200px;
+    }
+
+    .orb-3 {
+        display: none;
+        /* Hide third orb on mobile */
     }
 }
 
 @media (max-width: 480px) {
     .ascii-art {
         font-size: 0.85rem;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
     }
 
     .hero-tagline {
@@ -563,5 +611,16 @@
     .hero-button {
         font-size: 0.75rem;
         padding: 1rem 1.3rem;
+    }
+
+    /* Further reduce orbs on very small screens */
+    .orb-1 {
+        width: 180px;
+        height: 180px;
+    }
+
+    .orb-2 {
+        width: 150px;
+        height: 150px;
     }
 }
