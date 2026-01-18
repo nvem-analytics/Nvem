@@ -3,9 +3,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 6rem 2rem 2rem;
+    padding: 6rem 0 2rem;
     position: relative;
     overflow: hidden;
+    max-width: none;
+    margin: 0;
 }
 
 /* Animated Background Particles */
@@ -53,37 +55,36 @@
 .gradient-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.3;
+    filter: blur(120px);
+    opacity: 0.4;
     animation: float 20s ease-in-out infinite;
     pointer-events: none;
 }
 
 .orb-1 {
-    width: 500px;
-    height: 500px;
+    width: 700px;
+    height: 700px;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-    top: -10%;
-    left: -5%;
+    top: -15%;
+    left: -25%;
     animation-delay: 0s;
 }
 
 .orb-2 {
-    width: 400px;
-    height: 400px;
+    width: 600px;
+    height: 600px;
     background: linear-gradient(135deg, var(--accent-secondary), var(--accent-tertiary));
-    bottom: -10%;
-    right: -10%;
+    bottom: -15%;
+    right: -25%;
     animation-delay: 7s;
 }
 
 .orb-3 {
-    width: 300px;
-    height: 300px;
+    width: 550px;
+    height: 550px;
     background: linear-gradient(135deg, var(--accent-tertiary), var(--accent-primary));
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -12%;
+    right: -20%;
     animation-delay: 14s;
 }
 
@@ -104,7 +105,6 @@
 }
 
 .hero-content {
-    max-width: 1400px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -370,7 +370,7 @@
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 2rem;
+    bottom: -7rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
