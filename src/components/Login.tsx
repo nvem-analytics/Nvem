@@ -75,18 +75,23 @@ export default function Login() {
                             <a href="#" className="forgot-link">Forgot password?</a>
                         </div>
 
-                        <button type="submit" className="login-button" disabled={isLoading}>
-                            {isLoading ? (
-                                <>
-                                    <span className="loading-spinner"></span>
-                                    Authenticating...
-                                </>
-                            ) : (
-                                <>
-                                    [LOGIN]
-                                </>
-                            )}
+                       <button
+                            type="submit"
+                            className="login-button"
+                            disabled={isLoading}
+                        >
+                            <span className="button-content">
+                                {isLoading ? (
+                                    <>
+                                        <span className="loading-spinner"></span>
+                                        Authenticating...
+                                    </>
+                                ) : (
+                                    <>[LOGIN]</>
+                                )}
+                            </span>
                         </button>
+
                     </form>
 
                     <div className="login-footer">

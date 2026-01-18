@@ -164,9 +164,18 @@
     box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
 }
 
+.button-content {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
 .login-button::before {
     content: '';
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -179,6 +188,7 @@
 .login-button:hover:not(:disabled) {
     box-shadow: 0 6px 25px rgba(255, 255, 255, 0.4);
     transform: translateY(-4px) scale(1.02);
+    
 }
 
 .login-button:hover:not(:disabled)::before {
