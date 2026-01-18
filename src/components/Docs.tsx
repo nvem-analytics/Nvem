@@ -116,12 +116,6 @@ console.log(analysis);`}
                                 </div>
 
                                 <div className="guide-item">
-                                    <h3 className="guide-title">[Security Best Practices]</h3>
-                                    <p className="guide-desc">Implement security measures to protect your assets.</p>
-                                    <a href="#" className="guide-link">Read Guide →</a>
-                                </div>
-
-                                <div className="guide-item">
                                     <h3 className="guide-title">[Performance Optimization]</h3>
                                     <p className="guide-desc">Optimize your queries and reduce latency.</p>
                                     <a href="#" className="guide-link">Read Guide →</a>

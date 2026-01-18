@@ -42,24 +42,6 @@ export default function API() {
 
                     <div className="api-card">
                         <div className="card-header">
-                            <span className="method post">POST</span>
-                            <span className="endpoint">/v1/analyze</span>
-                        </div>
-                        <p className="card-desc">Analyze wallet or contract address</p>
-                        <div className="response-preview">
-                            <div className="response-header">Request Body</div>
-                            <pre className="response-body">
-                                {`{
-  "address": "0x...",
-  "chain": "ethereum",
-  "metrics": ["balance"]
-}`}
-                            </pre>
-                        </div>
-                    </div>
-
-                    <div className="api-card">
-                        <div className="card-header">
                             <span className="method get">GET</span>
                             <span className="endpoint">/v1/trading/signals</span>
                         </div>

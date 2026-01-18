@@ -58,21 +58,6 @@ export default function About() {
                         </div>
                     </div>
 
-                    <div className="about-block">
-                        <h3 className="block-title">
-                            <span className="title-bracket">[</span>Enterprise Security<span className="title-bracket">]</span>
-                        </h3>
-                        <p className="block-text">
-                            Bank-grade encryption and security protocols protect your data and assets.
-                            Multi-factor authentication, cold storage integration, and continuous security
-                            audits ensure your peace of mind.
-                        </p>
-                        <div className="tech-tags">
-                            <span className="tag">End-to-End Encryption</span>
-                            <span className="tag">2FA/MFA</span>
-                            <span className="tag">Audit Logs</span>
-                        </div>
-                    </div>
                 </div>
 
                 <div className="stats-section">
